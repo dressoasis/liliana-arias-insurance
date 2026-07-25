@@ -5,12 +5,12 @@ export const AppRoutes = {
   CONTACT: "/contact",
   SERVICES: {
     ROOT: "/services",
-    MEDICARE: "/services/medicare",
-    MARKETPLACE: "/services/marketplace",
-    LIFE: "/services/life-insurance",
-    DENTAL: "/services/dental-vision",
-    FINAL_EXPENSE: "/services/final-expense",
-    CRITICAL_ILLNESS: "/services/critical-illness",
+    MEDICARE: "/medicare",
+    MARKETPLACE: "/marketplace",
+    LIFE: "/seguro-de-vida",
+    DENTAL: "/odontologia-y-vision",
+    FINAL_EXPENSE: "/gastos-finales",
+    CRITICAL_ILLNESS: "/enfermedad-critica",
   },
   JOURNEY: {
     ROOT: "/journey",

@@ -67,7 +67,7 @@ const router = createBrowserRouter([
       }] : []),
       // ─── Rutas de Servicios ─────────────────────────────────────────────
       {
-        path: "services/medicare",
+        path: "medicare",
         element: (
           <Suspense fallback={<PageLoadingFallback />}>
             <MedicarePage />
@@ -75,7 +75,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "services/marketplace",
+        path: "marketplace",
         element: (
           <Suspense fallback={<PageLoadingFallback />}>
             <MarketplacePage />
@@ -83,7 +83,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "services/life-insurance",
+        path: "seguro-de-vida",
         element: (
           <Suspense fallback={<PageLoadingFallback />}>
             <LifeInsurancePage />
@@ -91,7 +91,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "services/odontologia-y-vision",
+        path: "odontologia-y-vision",
         element: (
           <Suspense fallback={<PageLoadingFallback />}>
             <DentalVisionPage />
@@ -99,7 +99,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "services/gastos-finales",
+        path: "gastos-finales",
         element: (
           <Suspense fallback={<PageLoadingFallback />}>
             <FinalExpensePage />
@@ -107,7 +107,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "services/enfermedad-critica",
+        path: "enfermedad-critica",
         element: (
           <Suspense fallback={<PageLoadingFallback />}>
             <CriticalIllnessPage />
