@@ -32,7 +32,12 @@ import {
   Scale,
   Calculator,
   ClipboardCheck,
-  HeartHandshake
+  HeartHandshake,
+  Umbrella,
+  Coins,
+  Layers,
+  Headphones,
+  Heart
 } from "lucide-react";
 
 // Centralized icon registry
@@ -69,6 +74,11 @@ const iconRegistry = {
   calculator: Calculator,
   "clipboard-check": ClipboardCheck,
   "heart-handshake": HeartHandshake,
+  umbrella: Umbrella,
+  coins: Coins,
+  layers: Layers,
+  headphones: Headphones,
+  heart: Heart,
 };
 
 const IconBase = ({ 
