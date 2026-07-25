@@ -21,6 +21,7 @@ const DevPage = lazy(() => import("@/pages/Dev/DevPage"));
 
 // ─── Service Pages ───────────────────────────────────────────────────────────
 const MedicarePage = lazy(() => import("@/pages/Services/Medicare/MedicarePage"));
+const MarketplacePage = lazy(() => import("@/pages/Services/Marketplace/MarketplacePage"));
 
 // ─── Fallback de Carga ───────────────────────────────────────────────────────
 // Un skeleton minimalista. Evita el flash de pantalla en blanco durante la carga.
@@ -66,6 +67,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<PageLoadingFallback />}>
             <MedicarePage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "services/marketplace",
+        element: (
+          <Suspense fallback={<PageLoadingFallback />}>
+            <MarketplacePage />
           </Suspense>
         ),
       },

@@ -28,7 +28,11 @@ import {
   Pill,
   FileText,
   Sparkles,
-  MessageSquare
+  MessageSquare,
+  Scale,
+  Calculator,
+  ClipboardCheck,
+  HeartHandshake
 } from "lucide-react";
 
 // Centralized icon registry
@@ -61,6 +65,10 @@ const iconRegistry = {
   "file-text": FileText,
   sparkles: Sparkles,
   "message-square": MessageSquare,
+  scale: Scale,
+  calculator: Calculator,
+  "clipboard-check": ClipboardCheck,
+  "heart-handshake": HeartHandshake,
 };
 
 const IconBase = ({ 
