@@ -37,7 +37,11 @@ import {
   Coins,
   Layers,
   Headphones,
-  Heart
+  Heart,
+  Eye,
+  Glasses,
+  Clock,
+  Construction
 } from "lucide-react";
 
 // Centralized icon registry
@@ -79,6 +83,10 @@ const iconRegistry = {
   layers: Layers,
   headphones: Headphones,
   heart: Heart,
+  eye: Eye,
+  glasses: Glasses,
+  clock: Clock,
+  construction: Construction,
 };
 
 const IconBase = ({ 

@@ -23,6 +23,9 @@ const DevPage = lazy(() => import("@/pages/Dev/DevPage"));
 const MedicarePage = lazy(() => import("@/pages/Services/Medicare/MedicarePage"));
 const MarketplacePage = lazy(() => import("@/pages/Services/Marketplace/MarketplacePage"));
 const LifeInsurancePage = lazy(() => import("@/pages/Services/LifeInsurance/LifeInsurancePage"));
+const DentalVisionPage = lazy(() => import("@/pages/Services/DentalVision/DentalVisionPage"));
+const FinalExpensePage = lazy(() => import("@/pages/Services/FinalExpense/FinalExpensePage"));
+const CriticalIllnessPage = lazy(() => import("@/pages/Services/CriticalIllness/CriticalIllnessPage"));
 
 // ─── Fallback de Carga ───────────────────────────────────────────────────────
 // Un skeleton minimalista. Evita el flash de pantalla en blanco durante la carga.
@@ -84,6 +87,30 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<PageLoadingFallback />}>
             <LifeInsurancePage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "services/odontologia-y-vision",
+        element: (
+          <Suspense fallback={<PageLoadingFallback />}>
+            <DentalVisionPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "services/gastos-finales",
+        element: (
+          <Suspense fallback={<PageLoadingFallback />}>
+            <FinalExpensePage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "services/enfermedad-critica",
+        element: (
+          <Suspense fallback={<PageLoadingFallback />}>
+            <CriticalIllnessPage />
           </Suspense>
         ),
       },
