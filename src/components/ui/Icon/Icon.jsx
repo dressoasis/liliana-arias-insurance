@@ -24,7 +24,11 @@ import {
   Smile,
   Landmark,
   Stethoscope,
-  Flame
+  Flame,
+  Pill,
+  FileText,
+  Sparkles,
+  MessageSquare
 } from "lucide-react";
 
 // Centralized icon registry
@@ -53,6 +57,10 @@ const iconRegistry = {
   landmark: Landmark,
   stethoscope: Stethoscope,
   flame: Flame,
+  pill: Pill,
+  "file-text": FileText,
+  sparkles: Sparkles,
+  "message-square": MessageSquare,
 };
 
 const IconBase = ({ 
