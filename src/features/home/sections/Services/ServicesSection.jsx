@@ -19,11 +19,11 @@ export const ServicesSection = () => {
       aria-labelledby="services-heading"
     >
       <Container>
-        {/* Section Header */}
+        {/* ── Section Header ── */}
         <div className="flex flex-col items-center text-center mb-16 max-w-2xl mx-auto">
           <Badge
             variant="primary"
-            className="px-4 py-1.5 text-sm font-semibold tracking-wide mb-5 shadow-sm shadow-primary/15"
+            className="px-4 py-1.5 text-xs font-bold tracking-widest uppercase mb-5 shadow-sm shadow-primary/15"
           >
             {badge}
           </Badge>
@@ -31,33 +31,34 @@ export const ServicesSection = () => {
           <Heading
             id="services-heading"
             level="h2"
-            className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-balance mb-5"
+            className="text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold tracking-tight leading-tight text-balance mb-5"
           >
             {title}
           </Heading>
 
           <Text
             variant="muted"
-            className="text-lg leading-relaxed max-w-[48ch] text-balance"
+            className="text-lg leading-relaxed max-w-[52ch] text-balance"
           >
             {description}
           </Text>
         </div>
 
-        {/* Services Grid — 1 col mobile / 2 cols tablet / 3 cols desktop */}
+        {/* ── Services Grid: 1 col / 2 cols tablet / 3 cols desktop ── */}
+        {/* gap-8 lg:gap-10 asegura el mucho espacio entre tarjetas solicitado */}
         <ul
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 list-none p-0 m-0"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 list-none p-0 m-0"
           aria-label="Servicios disponibles"
         >
           {items.map((service, index) => (
-            <li key={service.id}>
+            <li key={service.id} className="flex">
               <ServiceCard service={service} index={index} />
             </li>
           ))}
         </ul>
 
-        {/* Secondary CTA */}
-        <div className="flex justify-center mt-14">
+        {/* ── Secondary CTA ── */}
+        <div className="flex justify-center mt-16">
           <Link
             to={cta.href}
             className="group inline-flex items-center gap-2.5 text-base font-semibold text-primary hover:text-primary/80 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-md px-2"

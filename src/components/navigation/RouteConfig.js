@@ -5,9 +5,12 @@ export const AppRoutes = {
   CONTACT: "/contact",
   SERVICES: {
     ROOT: "/services",
-    LIFE: "/services/life",
-    HEALTH: "/services/health",
     MEDICARE: "/services/medicare",
+    MARKETPLACE: "/services/marketplace",
+    LIFE: "/services/life-insurance",
+    DENTAL: "/services/dental-vision",
+    FINAL_EXPENSE: "/services/final-expense",
+    CRITICAL_ILLNESS: "/services/critical-illness",
   },
   JOURNEY: {
     ROOT: "/journey",
@@ -22,11 +25,14 @@ export const getRouteTitle = (path) => {
     [AppRoutes.ABOUT]: "Nosotros",
     [AppRoutes.CONTACT]: "Contacto",
     [AppRoutes.SERVICES.ROOT]: "Servicios",
-    [AppRoutes.SERVICES.LIFE]: "Seguro de Vida",
-    [AppRoutes.SERVICES.HEALTH]: "Seguro de Salud",
     [AppRoutes.SERVICES.MEDICARE]: "Medicare",
+    [AppRoutes.SERVICES.MARKETPLACE]: "Marketplace ACA",
+    [AppRoutes.SERVICES.LIFE]: "Seguro de Vida",
+    [AppRoutes.SERVICES.DENTAL]: "Odontología y Visión",
+    [AppRoutes.SERVICES.FINAL_EXPENSE]: "Gastos Finales",
+    [AppRoutes.SERVICES.CRITICAL_ILLNESS]: "Enfermedad Crítica",
   };
-  
+
   // Fallback heurístico: Si no existe en el diccionario, toma la ruta y la capitaliza
   if (!titles[path]) {
     const slug = path.split("/").pop();
