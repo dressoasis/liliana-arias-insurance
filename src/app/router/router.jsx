@@ -18,6 +18,9 @@ import AppLayout from "../layouts/AppLayout";
 const HomePage = lazy(() => import("@/pages/Home/HomePage"));
 const NotFoundPage = lazy(() => import("@/pages/NotFound/NotFoundPage"));
 const DevPage = lazy(() => import("@/pages/Dev/DevPage"));
+const QuotePage = lazy(() => import("@/pages/Quote/QuotePage"));
+const ContactPage = lazy(() => import("@/pages/Contact/ContactPage"));
+const AboutPage = lazy(() => import("@/pages/About/AboutPage"));
 
 // ─── Service Pages ───────────────────────────────────────────────────────────
 const MedicarePage = lazy(() => import("@/pages/Services/Medicare/MedicarePage"));
@@ -65,6 +68,31 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       }] : []),
+      // ─── Core Pages (Temp) ──────────────────────────────────────────────
+      {
+        path: "quote",
+        element: (
+          <Suspense fallback={<PageLoadingFallback />}>
+            <QuotePage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "contact",
+        element: (
+          <Suspense fallback={<PageLoadingFallback />}>
+            <ContactPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "about",
+        element: (
+          <Suspense fallback={<PageLoadingFallback />}>
+            <AboutPage />
+          </Suspense>
+        ),
+      },
       // ─── Rutas de Servicios ─────────────────────────────────────────────
       {
         path: "medicare",

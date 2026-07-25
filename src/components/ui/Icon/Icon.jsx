@@ -41,7 +41,8 @@ import {
   Eye,
   Glasses,
   Clock,
-  Construction
+  Construction,
+  CalendarCheck
 } from "lucide-react";
 
 // Centralized icon registry
@@ -87,6 +88,7 @@ const iconRegistry = {
   glasses: Glasses,
   clock: Clock,
   construction: Construction,
+  "calendar-check": CalendarCheck,
 };
 
 const IconBase = ({ 
