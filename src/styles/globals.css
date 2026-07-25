@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@import "./theme.css";
+@import "./typography.css";
+
+@layer base {
+  body {
+    @apply bg-background text-text antialiased;
+  }
+
+  /* A11y: Smooth scrolling as default */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* A11y: Respect user's preference for reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* A11y: Universal visible focus ring for keyboard navigation */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
