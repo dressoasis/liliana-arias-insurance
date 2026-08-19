@@ -93,6 +93,14 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
+      {
+        path: "sobre-liliana",
+        element: (
+          <Suspense fallback={<PageLoadingFallback />}>
+            <AboutPage />
+          </Suspense>
+        ),
+      },
       // ─── Rutas de Servicios ─────────────────────────────────────────────
       {
         path: "medicare",
