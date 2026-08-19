@@ -18,7 +18,7 @@ export const HeroContent = () => {
       {/* Título H1 — jerarquía máxima */}
       <Heading
         level="h1"
-        className="text-[2.6rem] md:text-5xl lg:text-[3.75rem] xl:text-[4rem] font-extrabold tracking-tight leading-[1.08] text-balance max-w-[16ch] lg:max-w-none animate-in fade-in slide-in-from-bottom-5 duration-700 fill-mode-both"
+        className="text-4xl md:text-5xl lg:text-[3.75rem] xl:text-[4rem] font-extrabold tracking-tight leading-[1.08] text-balance max-w-[16ch] lg:max-w-none animate-in fade-in slide-in-from-bottom-5 duration-700 fill-mode-both"
         style={{ animationDelay: "80ms", color: "#0c1a2e" }}
       >
         {heroContent.title}

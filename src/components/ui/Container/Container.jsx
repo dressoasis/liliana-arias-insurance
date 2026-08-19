@@ -25,7 +25,7 @@ export const Container = ({
   return (
     <Component
       className={clsx(
-        "w-full mx-auto px-4 sm:px-6 md:px-8",
+        "w-full mx-auto px-5 sm:px-8",
         maxWMap[size] || maxWMap.lg,
         className
       )}

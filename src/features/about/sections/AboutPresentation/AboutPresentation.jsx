@@ -36,7 +36,7 @@ export const AboutPresentation = () => {
 
           {/* Columna izquierda — fotografía */}
           <div
-            className="flex justify-center lg:justify-start animate-in fade-in slide-in-from-left-6 duration-700 fill-mode-both"
+            className="flex justify-center lg:justify-start animate-in fade-in slide-in-from-left-6 duration-700 fill-mode-both order-2 lg:order-1 mt-6 lg:mt-0"
             style={{ animationDelay: "100ms" }}
           >
             <div className="relative w-full max-w-[400px]">
@@ -77,7 +77,7 @@ export const AboutPresentation = () => {
 
           {/* Columna derecha — texto */}
           <div
-            className="flex flex-col gap-6 animate-in fade-in slide-in-from-right-6 duration-700 fill-mode-both"
+            className="flex flex-col gap-6 animate-in fade-in slide-in-from-right-6 duration-700 fill-mode-both order-1 lg:order-2"
             style={{ animationDelay: "200ms" }}
           >
             {/* Línea de acento */}

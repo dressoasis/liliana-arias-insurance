@@ -98,7 +98,7 @@ export const AboutHero = () => {
             {/* Título H1 */}
             <Heading
               level="h1"
-              className="text-[2.2rem] md:text-[2.8rem] lg:text-[3.4rem] font-extrabold tracking-tight leading-[1.1] text-balance animate-in fade-in slide-in-from-bottom-5 duration-700 fill-mode-both"
+              className="text-4xl md:text-5xl lg:text-[3.4rem] font-extrabold tracking-tight leading-[1.1] text-balance animate-in fade-in slide-in-from-bottom-5 duration-700 fill-mode-both"
               style={{ animationDelay: "80ms", color: "#0c1a2e" }}
             >
               {hero.title}

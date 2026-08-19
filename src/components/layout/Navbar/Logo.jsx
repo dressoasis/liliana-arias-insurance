@@ -12,7 +12,7 @@ export const Logo = () => {
       <img
         src={logoHorizontal}
         alt={`${companyContent.name} — Licensed Insurance Advisor`}
-        className="h-20 w-auto object-contain transition-opacity duration-300 group-hover:opacity-90"
+        className="h-12 md:h-16 lg:h-20 w-auto object-contain transition-opacity duration-300 group-hover:opacity-90"
         draggable="false"
       />
     </Link>

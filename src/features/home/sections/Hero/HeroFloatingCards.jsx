@@ -59,7 +59,7 @@ const sizeConfig = [
 export const HeroFloatingCards = ({ cards }) => {
   return (
     <div
-      className="flex flex-row lg:flex-col flex-wrap lg:flex-nowrap gap-3 lg:gap-2.5 w-full lg:w-auto justify-center lg:justify-start"
+      className="flex flex-col gap-3 lg:gap-2.5 w-full lg:w-auto justify-center lg:justify-start"
       aria-label="Tipos de seguros disponibles"
     >
       {cards.map((card, index) => {
@@ -76,6 +76,8 @@ export const HeroFloatingCards = ({ cards }) => {
               "hover:-translate-y-1 hover:shadow-xl",
               // Animación escalonada entrada desde la derecha
               "animate-in fade-in slide-in-from-right-6 fill-mode-both",
+              // En mobile, ocultar las cards a partir de la 4ta (index >= 3)
+              index >= 3 ? "hidden lg:flex" : "flex",
               // Offset alternado para perspectiva en desktop
               index % 2 === 0 ? "lg:self-start" : "lg:self-end lg:translate-x-3",
             ].join(" ")}

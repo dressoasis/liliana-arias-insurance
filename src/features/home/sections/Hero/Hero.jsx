@@ -20,22 +20,29 @@ export const Hero = () => {
       <HeroBackground />
 
       <Container className="relative z-10 pt-28 md:pt-32 pb-8">
-        {/* Grid principal: dos columnas en desktop */}
-        <div className="grid grid-cols-1 lg:grid-cols-[48%_1fr] gap-10 lg:gap-12 xl:gap-20 items-center min-h-[82vh]">
+        {/* Grid principal: dos columnas en desktop, una vertical en mobile */}
+        <div className="flex flex-col lg:grid lg:grid-cols-[48%_1fr] gap-10 lg:gap-12 xl:gap-20 items-center min-h-[82vh]">
 
           {/* Columna izquierda: stack de contenido */}
-          <div className="flex flex-col items-center text-center lg:items-start lg:text-left gap-7">
+          <div className="flex flex-col items-center text-center lg:items-start lg:text-left gap-7 w-full order-1">
             <HeroContent />
             <HeroActions buttons={heroContent.buttons} />
-            <HeroTrustIndicators indicators={heroContent.trustIndicators} />
+            <div className="hidden lg:block w-full">
+              <HeroTrustIndicators indicators={heroContent.trustIndicators} />
+            </div>
           </div>
 
           {/* Columna derecha: fotografía + widgets flotantes */}
-          <div className="w-full">
+          <div className="w-full order-2">
             <HeroImage
               src={heroContent.image.src}
               alt={heroContent.image.alt}
             />
+          </div>
+
+          {/* Trust indicators en mobile (al final) */}
+          <div className="block lg:hidden w-full order-3 mt-4">
+            <HeroTrustIndicators indicators={heroContent.trustIndicators} />
           </div>
 
         </div>

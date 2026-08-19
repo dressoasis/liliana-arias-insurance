@@ -4,7 +4,7 @@ import { heroContent } from "../../../../content/home/hero";
 export const HeroImage = ({ src, alt }) => {
   return (
     <div
-      className="relative w-full h-full flex items-start justify-center lg:justify-end animate-in fade-in slide-in-from-right-8 duration-800 fill-mode-both"
+      className="relative w-full h-full flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-end animate-in fade-in slide-in-from-right-8 duration-800 fill-mode-both"
       style={{ animationDelay: "440ms" }}
     >
       {/* Contenedor principal de la fotografía */}
@@ -58,7 +58,7 @@ export const HeroImage = ({ src, alt }) => {
 
       {/* Widgets flotantes — desktop: borde izquierdo de la foto, mobile: debajo */}
       <div
-        className="w-full lg:w-auto mt-6 lg:mt-0 lg:absolute lg:top-1/2 lg:-translate-y-[45%] lg:-left-6 xl:-left-12 z-20"
+        className="w-full max-w-[420px] lg:max-w-none lg:w-auto mt-6 lg:mt-0 lg:absolute lg:top-1/2 lg:-translate-y-[45%] lg:-left-6 xl:-left-12 z-20"
         style={{ animationDelay: "600ms" }}
       >
         <HeroFloatingCards cards={heroContent.floatingCards} />
