@@ -105,17 +105,20 @@ export const RequestConsultationModal = ({ isOpen, preselectedService, onClose }
     const formspreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
 
     try {
-      if (!formspreeEndpoint) {
+      if (!formspreeEndpoint || formspreeEndpoint.includes("YOUR_FORM_ID")) {
         if (import.meta.env.DEV) {
           console.warn(
-            "[Formspree] VITE_FORMSPREE_ENDPOINT no está configurado en el archivo .env. " +
-            "Por favor define VITE_FORMSPREE_ENDPOINT=https://formspree.io/f/TU_FORM_ID"
+            "[Formspree Error] El endpoint en .env es 'YOUR_FORM_ID'. " +
+            "Debes crear tu formulario en https://formspree.io (con destino lilianaariasinsurance@gmail.com) " +
+            "y colocar tu URL real (ej. https://formspree.io/f/xknlqwbv) en el archivo .env."
           );
         }
-        throw new Error("Formspree endpoint no configurado");
+        throw new Error("Formspree endpoint no configurado con un ID real");
       }
 
       const payload = {
+        email: data.email,
+        name: data.fullName,
         _subject: "Nueva solicitud de asesoría — Liliana Arias Insurance",
         _replyto: data.email,
         Nombre: data.fullName,
