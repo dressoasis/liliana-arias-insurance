@@ -45,7 +45,7 @@ export const ServicesSection = () => {
         </div>
 
         {/* ── Services Grid: 1 col / 2 cols tablet / 3 cols desktop ── */}
-        {/* gap-8 lg:gap-10 asegura el mucho espacio entre tarjetas solicitado */}
+        {/* gap-8 lg:gap-10 asegura el espacio entre tarjetas */}
         <ul
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 list-none p-0 m-0"
           aria-label="Servicios disponibles"
@@ -56,21 +56,6 @@ export const ServicesSection = () => {
             </li>
           ))}
         </ul>
-
-        {/* ── Secondary CTA ── */}
-        <div className="flex justify-center mt-16">
-          <Link
-            to={cta.href}
-            className="group inline-flex items-center gap-2.5 text-base font-semibold text-primary hover:text-primary/80 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-md px-2"
-          >
-            {cta.label}
-            <Icon
-              name="arrow-right"
-              className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
-              aria-hidden="true"
-            />
-          </Link>
-        </div>
       </Container>
     </Section>
   );

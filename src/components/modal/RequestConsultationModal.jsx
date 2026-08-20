@@ -33,6 +33,11 @@ const PREFERRED_TIME_OPTIONS = [
   { value: "no_preference", label: "No tengo preferencia" },
 ];
 
+const getOptionLabel = (options, value) => {
+  const item = options.find((opt) => opt.value === value);
+  return item ? item.label : value;
+};
+
 export const RequestConsultationModal = ({ isOpen, preselectedService, onClose }) => {
   const [submitStatus, setSubmitStatus] = useState("idle"); // 'idle' | 'submitting' | 'success' | 'error'
   const firstInputRef = useRef(null);
@@ -101,9 +106,26 @@ export const RequestConsultationModal = ({ isOpen, preselectedService, onClose }
 
     try {
       if (!formspreeEndpoint) {
-        // Sin endpoint configurado en entorno
+        if (import.meta.env.DEV) {
+          console.warn(
+            "[Formspree] VITE_FORMSPREE_ENDPOINT no está configurado en el archivo .env. " +
+            "Por favor define VITE_FORMSPREE_ENDPOINT=https://formspree.io/f/TU_FORM_ID"
+          );
+        }
         throw new Error("Formspree endpoint no configurado");
       }
+
+      const payload = {
+        _subject: "Nueva solicitud de asesoría — Liliana Arias Insurance",
+        _replyto: data.email,
+        Nombre: data.fullName,
+        Teléfono: data.phone,
+        Correo: data.email,
+        "Tipo de seguro": getOptionLabel(SERVICE_OPTIONS, data.service),
+        "Preferencia de contacto": getOptionLabel(CONTACT_METHOD_OPTIONS, data.preferredContact),
+        "Preferencia de horario": getOptionLabel(PREFERRED_TIME_OPTIONS, data.preferredTime),
+        Mensaje: data.message ? data.message.trim() : "Sin mensaje adicional",
+      };
 
       const response = await fetch(formspreeEndpoint, {
         method: "POST",
@@ -111,25 +133,23 @@ export const RequestConsultationModal = ({ isOpen, preselectedService, onClose }
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify({
-          "Nombre Completo": data.fullName,
-          "Teléfono": data.phone,
-          "Correo Electrónico": data.email,
-          "Tipo de Seguro": data.service,
-          "Preferencia de Contacto": data.preferredContact,
-          "Horario Preferido": data.preferredTime,
-          "Mensaje": data.message || "Sin mensaje adicional",
-          "_subject": `Nueva solicitud de asesoría de ${data.fullName}`,
-        }),
+        body: JSON.stringify(payload),
       });
 
       if (response.ok) {
         setSubmitStatus("success");
         track("consultation_form_success", { service: data.service });
       } else {
-        throw new Error("Error en el envío");
+        const errorData = await response.json().catch(() => ({}));
+        if (import.meta.env.DEV) {
+          console.error("[Formspree HTTP Error]", response.status, errorData);
+        }
+        throw new Error(`Error HTTP: ${response.status}`);
       }
     } catch (err) {
+      if (import.meta.env.DEV) {
+        console.error("[Formspree Submission Error]", err.message);
+      }
       setSubmitStatus("error");
       track("consultation_form_error", { service: data.service });
     }
