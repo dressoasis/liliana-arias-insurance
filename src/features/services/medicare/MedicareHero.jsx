@@ -7,6 +7,7 @@ import { Text } from "@/components/ui/Text";
 import { Button } from "@/components/ui/Button";
 import { medicareContent } from "@/content/services/medicare";
 import { useIntersectionAnimation } from "@/hooks/useIntersectionAnimation";
+import { useConsultationModal } from "@/context/ConsultationModalContext";
 
 // ── Benefit Item ──────────────────────────────────────────────────────────────
 const BenefitItem = ({ benefit, delay }) => {
@@ -54,12 +55,13 @@ const BenefitItem = ({ benefit, delay }) => {
 // ── Medicare Hero Block ───────────────────────────────────────────────────────
 export const MedicareHero = () => {
   const navigate = useNavigate();
+  const { openConsultationModal } = useConsultationModal();
   const { badge, title, description, benefits, highlight, buttons, image } = medicareContent;
 
   const { ref: textRef, isVisible: textVisible } = useIntersectionAnimation({ threshold: 0.1 });
   const { ref: imgRef, isVisible: imgVisible } = useIntersectionAnimation({ threshold: 0.1 });
 
-  const handlePrimary = () => navigate(buttons.primary.href);
+  const handlePrimary = () => openConsultationModal("medicare");
   const handleWhatsApp = () => {
     const clean = buttons.secondary.phone.replace(/\D/g, "");
     const msg = encodeURIComponent(buttons.secondary.message);

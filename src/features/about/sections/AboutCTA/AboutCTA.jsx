@@ -8,15 +8,19 @@ import { Text } from "@/components/ui/Text";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { aboutContent } from "@/content/about/about";
+import { useConsultationModal } from "@/context/ConsultationModalContext";
 
 const { cta } = aboutContent;
 
 export const AboutCTA = () => {
   const navigate = useNavigate();
+  const { openConsultationModal } = useConsultationModal();
 
   const handleNav = (btn) => {
     if (btn.external || btn.href.startsWith("http") || btn.href.startsWith("tel:")) {
       window.open(btn.href, "_blank", "noopener,noreferrer");
+    } else if (btn.href === "/quote" || btn.href === "/contact" || btn.label.toLowerCase().includes("asesoría")) {
+      openConsultationModal();
     } else {
       navigate(btn.href);
     }

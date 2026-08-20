@@ -1,6 +1,14 @@
+import { useEffect } from "react";
 import { ComingSoonService } from "@/features/services/common/ComingSoonService";
+import { useConsultationModal } from "@/context/ConsultationModalContext";
 
 function QuotePage() {
+  const { openConsultationModal } = useConsultationModal();
+
+  useEffect(() => {
+    openConsultationModal();
+  }, [openConsultationModal]);
+
   return (
     <main>
       <ComingSoonService

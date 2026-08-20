@@ -51,7 +51,7 @@ export const dentalVisionContent = {
     },
     secondary: {
       label: "Hablar por WhatsApp",
-      phone: "13059886196",
+      phone: "12109293721",
       message:
         "Hola Liliana, me gustaría recibir asesoría sobre planes de Odontología y Visión.",
     },

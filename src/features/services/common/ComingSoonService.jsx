@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Heading } from "@/components/ui/Heading";
 import { Text } from "@/components/ui/Text";
 import { Button } from "@/components/ui/Button";
+import { useConsultationModal } from "@/context/ConsultationModalContext";
 
 export const ComingSoonService = ({
   badgeLabel,
@@ -13,9 +14,10 @@ export const ComingSoonService = ({
   mainIcon,
 }) => {
   const navigate = useNavigate();
+  const { openConsultationModal } = useConsultationModal();
 
   const handleWhatsApp = () => {
-    const phone = "13059886196";
+    const phone = "12109293721";
     const msg = encodeURIComponent(`Hola Liliana, me gustaría recibir asesoría sobre ${badgeLabel}.`);
     window.open(`https://wa.me/${phone}?text=${msg}`, "_blank", "noopener,noreferrer");
   };
@@ -76,7 +78,7 @@ export const ComingSoonService = ({
               "hover:bg-[#0369a1] hover:shadow-[0_8px_32px_rgba(2,132,199,0.42)] hover:-translate-y-0.5",
               "active:translate-y-0"
             )}
-            onClick={() => navigate("/quote")}
+            onClick={() => openConsultationModal()}
           >
             Solicitar asesoría
           </Button>

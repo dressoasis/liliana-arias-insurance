@@ -6,7 +6,7 @@ export const heroContent = {
   description: "Obtén la cobertura médica y de vida que realmente necesitas, con asesoría honesta, clara y siempre a tu lado.",
   buttons: [
     { label: "Solicitar asesoría gratuita", href: "/contact", variant: "primary" },
-    { label: "Llamar ahora", href: "tel:+15551234567", variant: "outline" }
+    { label: "Escribir por WhatsApp", href: "https://wa.me/12109293721", variant: "outline", external: true }
   ],
   trustIndicators: [
     { id: "ti1", title: "Asesoría Gratuita", icon: "check-circle-2" },

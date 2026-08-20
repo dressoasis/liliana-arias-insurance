@@ -1,26 +1,18 @@
 import { Icon } from "../../ui/Icon";
 import { CTAButton } from "./CTAButton";
-import { logger } from "../../../utils/logger";
+import { useConsultationModal } from "@/context/ConsultationModalContext";
 
-/**
- * ScheduleButton
- * 
- * Especialización orientada a la conversión principal: Agendamiento.
- * Preparado para disparar un modal de Calendly o redirigir a una ruta de calendario.
- */
 export const ScheduleButton = ({ 
-  calendlyUrl, 
-  children = "Agendar cita",
+  service,
+  children = "Solicitar asesoría",
+  onClick,
   ...props 
 }) => {
-  const handleScheduleClick = () => {
-    // Integración Futura: Disparar el Popup/Widget nativo de Calendly
-    if (calendlyUrl) {
-      window.open(calendlyUrl, "_blank", "noopener,noreferrer");
-    } else {
-      logger.info("[Calendly] Preparando para inyectar o abrir Modal nativo de calendario...");
-      // Ej: window.Calendly.initPopupWidget({ url: '...' });
-    }
+  const { openConsultationModal } = useConsultationModal();
+
+  const handleScheduleClick = (e) => {
+    if (onClick) onClick(e);
+    openConsultationModal(service);
   };
 
   return (

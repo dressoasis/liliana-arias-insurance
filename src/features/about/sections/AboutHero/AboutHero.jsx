@@ -8,17 +8,21 @@ import { Heading } from "@/components/ui/Heading";
 import { Text } from "@/components/ui/Text";
 import { Button } from "@/components/ui/Button";
 import { aboutContent } from "@/content/about/about";
+import { useConsultationModal } from "@/context/ConsultationModalContext";
 
 const { hero } = aboutContent;
 
 export const AboutHero = () => {
   const navigate = useNavigate();
+  const { openConsultationModal } = useConsultationModal();
 
-  const handleNav = (href) => {
-    if (href.startsWith("http") || href.startsWith("tel:")) {
-      window.location.href = href;
+  const handleNav = (btn) => {
+    if (btn.external || btn.href.startsWith("http") || btn.href.startsWith("tel:")) {
+      window.location.href = btn.href;
+    } else if (btn.href === "/quote" || btn.href === "/contact" || btn.label.toLowerCase().includes("asesoría")) {
+      openConsultationModal();
     } else {
-      navigate(href);
+      navigate(btn.href);
     }
   };
 
@@ -138,7 +142,7 @@ export const AboutHero = () => {
                           "active:translate-y-0",
                         ].join(" "),
                   ].join(" ")}
-                  onClick={() => handleNav(btn.href)}
+                  onClick={() => handleNav(btn)}
                 >
                   {btn.label}
                 </Button>

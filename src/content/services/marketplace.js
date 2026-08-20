@@ -51,7 +51,7 @@ export const marketplaceContent = {
     },
     secondary: {
       label: "Hablar por WhatsApp",
-      phone: "13059886196",
+      phone: "12109293721",
       message:
         "Hola Liliana, me gustaría recibir asesoría sobre el Marketplace ACA y mis opciones de seguro médico.",
     },

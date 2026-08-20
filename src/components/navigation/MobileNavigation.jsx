@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import { clsx } from "clsx";
 import { useNavigation } from "./NavigationProvider";
 import { NavigationItem } from "./NavigationItem";
-import { ScheduleButton } from "../shared/Actions/ScheduleButton";
+import { WhatsAppButton } from "../shared/Actions/WhatsAppButton";
 import { Icon } from "../ui/Icon";
 
 export const MobileNavigation = () => {
@@ -39,14 +39,13 @@ export const MobileNavigation = () => {
         </nav>
       </div>
       <div className="p-6 pb-12 bg-slate-50/80 border-t border-slate-200">
-        <ScheduleButton 
-          fullWidth 
-          size="lg" 
-          className="rounded-full shadow-lg shadow-primary/20 py-4 text-lg"
+        <WhatsAppButton 
+          phoneNumber="12109293721"
+          className="w-full rounded-full shadow-lg py-4 text-lg justify-center flex items-center"
           onClick={closeMobileMenu}
         >
           {navigationData.cta.label}
-        </ScheduleButton>
+        </WhatsAppButton>
       </div>
     </div>,
     document.body

@@ -51,7 +51,7 @@ export const lifeInsuranceContent = {
     },
     secondary: {
       label: "Hablar por WhatsApp",
-      phone: "13059886196",
+      phone: "12109293721",
       message:
         "Hola Liliana, me gustaría recibir asesoría sobre opciones de Seguro de Vida para proteger a mi familia.",
     },

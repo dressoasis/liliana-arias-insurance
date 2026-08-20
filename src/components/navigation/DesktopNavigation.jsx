@@ -1,6 +1,6 @@
 import { useNavigation } from "./NavigationProvider";
 import { NavigationItem } from "./NavigationItem";
-import { ScheduleButton } from "../shared/Actions/ScheduleButton";
+import { WhatsAppButton } from "../shared/Actions/WhatsAppButton";
 
 export const DesktopNavigation = () => {
   const { navigationData } = useNavigation();
@@ -16,9 +16,9 @@ export const DesktopNavigation = () => {
       
       {/* Separador y CTA */}
       <div className="pl-8 border-l border-border flex items-center">
-        <ScheduleButton variant="primary" size="lg" className="rounded-full px-8 py-3 text-[15px] font-bold tracking-wide shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-300">
+        <WhatsAppButton phoneNumber="12109293721" className="rounded-full px-8 py-3 text-[15px] font-bold tracking-wide shadow-lg hover:-translate-y-0.5 transition-all duration-300">
           {navigationData.cta.label}
-        </ScheduleButton>
+        </WhatsAppButton>
       </div>
     </nav>
   );

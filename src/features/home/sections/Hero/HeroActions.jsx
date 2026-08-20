@@ -1,8 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "../../../../components/ui/Button";
+import { useConsultationModal } from "@/context/ConsultationModalContext";
 
 export const HeroActions = ({ buttons }) => {
   const navigate = useNavigate();
+  const { openConsultationModal } = useConsultationModal();
 
   return (
     <div
@@ -10,8 +12,10 @@ export const HeroActions = ({ buttons }) => {
       style={{ animationDelay: "260ms" }}
     >
       {buttons.map((btn, index) => {
-        const isExternal = btn.href.startsWith("http") || btn.href.startsWith("tel:");
+        const isExternal = btn.external || btn.href.startsWith("http") || btn.href.startsWith("tel:");
         const isPrimary = btn.variant === "primary";
+        const isConsultation = btn.href === "/quote" || btn.href === "/contact" || btn.label.toLowerCase().includes("asesoría");
+
         return (
           <Button
             key={index}
@@ -35,6 +39,8 @@ export const HeroActions = ({ buttons }) => {
             onClick={() => {
               if (isExternal) {
                 window.location.href = btn.href;
+              } else if (isConsultation) {
+                openConsultationModal();
               } else {
                 navigate(btn.href);
               }

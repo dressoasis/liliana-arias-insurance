@@ -50,7 +50,7 @@ export const medicareContent = {
     },
     secondary: {
       label: "Hablar por WhatsApp",
-      phone: "13059886196",
+      phone: "12109293721",
       message:
         "Hola Liliana, me gustaría recibir asesoría sobre Medicare y mis opciones de cobertura.",
     },

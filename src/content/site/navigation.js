@@ -18,7 +18,8 @@ export const navigationContent = {
     { id: "contact", label: "Contacto", href: "/contact" },
   ],
   cta: {
-    label: "Solicitar asesoría",
-    href: "/quote",
+    label: "Hablar por WhatsApp",
+    href: "https://wa.me/12109293721",
+    external: true,
   },
 };
